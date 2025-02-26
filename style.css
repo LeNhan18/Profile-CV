@@ -1,0 +1,36 @@
+:root {
+    --primary-color : #00a8ff;
+    --secondary-color :  #0097e6;
+    --text-color:#ffffff;
+    --dark-bg:#000000; ;
+    --darker-bg: #0a0a0a;
+    --section-bg: #111111;
+    --hover-color:  #1a1a1a;
+}
+body{
+    background: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden;
+    perspective: 1000px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+    position: relative;
+}
+.profile-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: block;
+    border: 5px solid #fff;
+    box-shadow: 0 0 25px rgba(52, 152, 219, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: profilePulse 2s infinite alternate;
+    object-fit: cover;
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 0 40px rgba(52, 152, 219, 0.4);
+}
