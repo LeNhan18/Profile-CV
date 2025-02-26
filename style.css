@@ -1,23 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
 :root {
-    --primary-color : #00a8ff;
-    --secondary-color :  #0097e6;
-    --text-color:#ffffff;
-    --dark-bg:#000000; ;
+    --primary-color:    
+    --secondary-color: #0097e6;
+    --text-color: #ffffff;
+    --dark-bg: #000000;
     --darker-bg: #0a0a0a;
     --section-bg: #111111;
-    --hover-color:  #1a1a1a;
+    --hover-color: #1a1a1a;
 }
-body{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
     background: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
-    overflow: hidden;
+    overflow-x: hidden;
     perspective: 1000px;
     min-height: 100vh;
     background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
     position: relative;
 }
-.profile-img{
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 168, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 151, 230, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    transform-style: preserve-3d;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(17, 17, 17, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+               inset 0 0 15px rgba(0, 168, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    animation: fadeInDown 1s forwards;
+}
+
+.profile-img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -29,58 +73,10 @@ body{
     animation: profilePulse 2s infinite alternate;
     object-fit: cover;
 }
+
 .profile-img:hover {
     transform: scale(1.05) rotate(5deg);
     box-shadow: 0 0 40px rgba(52, 152, 219, 0.4);
-}
-
-/*Contact-Link add hover and icon */
-.contact-link{
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-.contact-link a{
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border: radius 25px; 
-    font-size: 1.1em;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255 , 255, 0.05);
-    color: var(--text-color);
-}
-.profile-img:hover {
-    transform: scale(1.05) rotate(5deg);
-    box-shadow: 0 0 40px rgba(52, 152, 219, 0.4);
-}
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.contact-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-size: 1.1em;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--text-color);
-}
-
-.contact-links a:hover {
-    color: white;
-    background: var(--primary-color);
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
-    transform: translateY(-3px);
 }
 
 .header h1 {
@@ -113,6 +109,7 @@ body{
     background-clip: text;
     color: transparent;
 }
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -124,6 +121,7 @@ body{
         background-position: 0% 50%;
     }
 }
+
 @keyframes glow {
     from {
         text-shadow: 0 0 10px rgba(0, 168, 255, 0.3),
@@ -136,6 +134,7 @@ body{
                    0 0 40px rgba(0, 168, 255, 0.5);
     }
 }
+
 .header p {
     font-size: 1.8em;
     margin-bottom: 1.5rem;
@@ -146,19 +145,33 @@ body{
     font-weight: 600;
 }
 
-/* Logo hutech*/
-.school-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-right: 15px;
-    vertical-align: middle;
-    /* filter: brightness(0) invert(1); Chuyển logo thành màu trắng */
-    transition: all 0.3s ease;
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
+.contact-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
 
-/* Section*/
+.contact-links a:hover {
+    color: white;
+    background: var(--primary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+    transform: translateY(-3px);
+}
+
 .section {
     background: rgba(17, 17, 17, 0.95);
     padding: 2.5rem;
@@ -204,6 +217,7 @@ body{
 .section:hover h2::after {
     width: 100%;
 }
+
 .skill-list {
     display: flex;
     flex-wrap: wrap;
@@ -298,7 +312,7 @@ body{
 @keyframes profilePulse {
     from { box-shadow: 0 0 25px rgba(52, 152, 219, 0.2); }
     to { box-shadow: 0 0 40px rgba(52, 152, 219, 0.4); }
-} 
+}
 
 @keyframes gradientText {
     0% { background-position: 0% 50%; }
@@ -306,7 +320,6 @@ body{
     100% { background-position: 0% 50%; }
 }
 
-/* Animation */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -328,16 +341,16 @@ body{
         transform: translateX(0);
     }
 }
-/* Chữ chạy */
- @keyframes typing {
+
+@keyframes typing {
     from { width: 0 }
     to { width: 100% }
-} 
+}
 
-/* @keyframes blink-caret {
+@keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--primary-color) }
-}  */
+}
 
 .particle {
     position: absolute;
@@ -347,7 +360,8 @@ body{
     opacity: 0.4;
     animation: particleAnimation 10s infinite;
 }
-/* @keyframes particleAnimation {
+
+@keyframes particleAnimation {
     0% {
         transform: scale(1);
         opacity: 1;
@@ -356,63 +370,104 @@ body{
         transform: scale(0);
         opacity: 0;
     }
-}  */
+}
+
+/* Thêm style cho logo trường */
+.school-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1); /* Chuyển logo thành màu trắng */
+    transition: all 0.3s ease;
+}
+
+.school-logo:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
 .education-header {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
-.container {
-    padding: 1rem;
-    margin: 1rem;
+
+/* Pet styles */
+.pet {
+    position: fixed;
+    width: 128px;
+    height: 128px;
+    background: url('pet.gif') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.3s ease;
 }
 
-.header {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+.pet.flip {
+    transform: scaleX(-1);
 }
 
-.profile-img {
-    width: 200px;
-    height: 200px;
+@keyframes jump {
+    0%, 100% { transform: translateY(0) scale(1.5); }
+    50% { transform: translateY(-30px) scale(1.5); }
 }
 
-.header h1 {
-    font-size: 2.5em;
-}
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
 
-.header p {
-    font-size: 1.4em;
-}
+    .header {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
 
-.section {
-    padding: 1.5rem;
-}
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
 
-.section h2 {
-    font-size: 1.8em;
-}
+    .header h1 {
+        font-size: 2.5em;
+    }
 
-.skill-item {
-    padding: 0.6rem 1.2rem;
-    font-size: 1em;
-}
+    .header p {
+        font-size: 1.4em;
+    }
 
-.experience-item h3 {
-    font-size: 1.2em;
-}
+    .section {
+        padding: 1.5rem;
+    }
 
-.experience-item p,
-.experience-item ul li {
-    font-size: 1em;
-}
+    .section h2 {
+        font-size: 1.8em;
+    }
 
-.contact-links {
-    flex-direction: column;
-    align-items: center;
-}
+    .skill-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 1em;
+    }
 
-.contact-links a {
-    width: 100%;
-    text-align: center;
+    .experience-item h3 {
+        font-size: 1.2em;
+    }
+
+    .experience-item p,
+    .experience-item ul li {
+        font-size: 1em;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-links a {
+        width: 100%;
+        text-align: center;
+    }
 }
